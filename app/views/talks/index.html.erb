@@ -1,0 +1,22 @@
+<div class="container">
+
+  <h1> Tweet List </h1>
+
+  <div id="new-blog-link">
+    <%= link_to '新規ツイートを作成する', new_talk_path %>
+  </div>
+
+  <div class="row">
+    <% @talks.each do |talk| %>
+      <div class="col-xs-12 col-md-6 talk-panel">
+        <h3><%= talk.content %></h3>
+        <p><%= talk.created_at %></p>
+        <div class="talk-links">
+          <%= link_to '詳細', talk, class:'btn btn-default'%>
+          <%= link_to '編集', edit_talk_path(talk), class: 'btn btn-default' %>
+          <%= link_to '削除', talk, method: :delete, data:{confirm: '本当に削除して良いですか？'}, class:'btn btn-default' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
