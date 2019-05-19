@@ -1,9 +1,7 @@
 <h1>Confirmation</h1>
 <h3>確認画面。以下の内容で、送信する。</h3>
-<p> デバグ1 </p>
-<!-- 追加：確認画面でエラー表示 -->
+
 <% if @talk.errors.any? %>
-<p> デバグ1:talks.error.any==yes </p>
   <div id="error_explanation">
     <h2><%= @talk.errors.count %>件のエラーがあります。</h2>
     <ul>
