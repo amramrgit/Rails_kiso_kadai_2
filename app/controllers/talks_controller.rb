@@ -14,6 +14,7 @@ before_action:set_talk, only:[:show, :edit, :update, :destroy]
 
   def confirm
     @talk=Talk.new(talk_params)
+    @talk.valid?
   end
 
   def create
